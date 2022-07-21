@@ -50,28 +50,28 @@ class HomePage extends StatelessWidget {
                   child: const Icon(Icons.add),
                 ),
                 onTap: (){
-                  if(context.read<DataClass>().x>=5){
-                    Get.snackbar("Item", "Can not more than this",
-                        backgroundColor: Colors.black,
-                        colorText: Colors.white,
-                        titleText: const Text(
-                          "Item",
-                          style: TextStyle(
-                              fontSize: 40,
-                              color: Colors.white
-                          ),
-                        ),
-                        messageText: const Text(
-                          "Can not be more than this",
-                          style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white
-                          ),
-                        )
-                    );
-                  }else{
-                    context.read<DataClass>().incrementX();
-                  }
+                  Provider.of<DataClass>(context, listen: false).incrementX();                 // if(context.read<DataClass>().x>=5){
+                  //   Get.snackbar("Item", "Can not more than this",
+                  //       backgroundColor: Colors.black,
+                  //       colorText: Colors.white,
+                  //       titleText: const Text(
+                  //         "Item",
+                  //         style: TextStyle(
+                  //             fontSize: 40,
+                  //             color: Colors.white
+                  //         ),
+                  //       ),
+                  //       messageText: const Text(
+                  //         "Can not be more than this",
+                  //         style: TextStyle(
+                  //             fontSize: 20,
+                  //             color: Colors.white
+                  //         ),
+                  //       )
+                  //   );
+                  // }else{
+                  //   context.read<DataClass>().incrementX();
+                  // }
                 },),
                 const Spacer(),
                 Container(
